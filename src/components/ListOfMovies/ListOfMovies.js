@@ -3,8 +3,9 @@ import React from 'react';
 import {Movie} from '../Movie/Movie';
 import {MoviesList} from './ListOfMovies.styles';
 import PropTypes from 'prop-types';
+import {useNavigation} from '@react-navigation/native';
 export const ListOfMovies = ({movies}) => {
-  console.log('movieees', movies);
+  const navigation = useNavigation();
   return (
     <MoviesList
       data={movies}
@@ -14,7 +15,7 @@ export const ListOfMovies = ({movies}) => {
       showsHorizontalScrollIndicator={false}
       horizontal
       renderItem={({item}) => {
-        return <Movie movie={item} />;
+        return <Movie movie={item} navigation={navigation} />;
       }}
       contentContainerStyle={{paddingLeft: 20}}
     />

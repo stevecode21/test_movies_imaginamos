@@ -10,11 +10,13 @@ import {ListOfMovies} from '../ListOfMovies/ListOfMovies';
  */
 import {useSelector} from 'react-redux';
 export const MoviesView = () => {
-  const {movies} = useSelector((state) => state.reduxMovies);
+  const {movies, ratedMovies} = useSelector((state) => state.reduxMovies);
   return (
     <Container>
       <SubtitlesMoviesView subtitle="RECOMMENDED FOR YOU" />
       <ListOfMovies movies={movies} />
+      <SubtitlesMoviesView subtitle="TOP RATED" />
+      <ListOfMovies movies={ratedMovies} />
     </Container>
   );
 };

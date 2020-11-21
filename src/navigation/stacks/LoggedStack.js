@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack';
  * Screens
  */
 import {Movies} from '../../screens/Movies/Movies';
+import {MovieDetail} from '../../screens/Movies/MovieDetail';
 /**
  * Constants
  */
@@ -22,6 +23,7 @@ export const LoggedStack = () => {
         headerShown: false,
       }}>
       <Stack.Screen name={LoggedRoutes.MOVIES} component={Movies} />
+      <Stack.Screen name={LoggedRoutes.MOVIE_DETAIL} component={MovieDetail} />
     </Stack.Navigator>
   );
 };
