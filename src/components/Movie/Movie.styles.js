@@ -1,7 +1,7 @@
 import styled from 'styled-components/native';
 import {defaultColors} from '../../constants/themes';
 export const Container = styled.View`
-  margin: 0 10px 0 10px;
+  margin: 0 10px 10px 10px;
   /* background-color: red; */
   width: 130px;
 `;

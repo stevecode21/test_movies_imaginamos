@@ -1,9 +1,22 @@
 /* eslint-disable react/jsx-no-bind */
+/**
+ * Libraries
+ */
 import React from 'react';
+import PropTypes from 'prop-types';
+/**
+ * Styles
+ */
 import {ContainerImage, Image, Name, Container, Touch} from './Movie.styles';
+/**
+ * Components
+ */
+import {Stars} from '../Stars/Stars';
+/**
+ * Constants
+ */
 import {ROUTES} from '../../constants/api';
 import {LoggedRoutes} from '../../navigation/routes/LoggedRoutes';
-import PropTypes from 'prop-types';
 export const Movie = ({movie, navigation}) => {
   return (
     <Container>
@@ -20,7 +33,8 @@ export const Movie = ({movie, navigation}) => {
           />
         </ContainerImage>
       </Touch>
-      <Name>{movie.original_title}</Name>
+      <Name numberOfLines={1}>{movie.original_title}</Name>
+      <Stars voteAverage={movie.vote_average} />
     </Container>
   );
 };
