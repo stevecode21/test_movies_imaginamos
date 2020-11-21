@@ -1,0 +1,9 @@
+import styled from 'styled-components/native';
+import {defaultColors} from '../../constants/themes';
+export const Container = styled.View`
+  flex: 2;
+  background-color: ${defaultColors.secondary};
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 40px;
+`;
