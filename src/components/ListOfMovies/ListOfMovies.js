@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import {Movie} from '../Movie/Movie';
 import {MoviesList} from './ListOfMovies.styles';

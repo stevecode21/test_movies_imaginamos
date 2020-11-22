@@ -1,8 +1,8 @@
 import styled from 'styled-components/native';
-import {defaultColors} from '../../constants/themes';
+import {defaultColors, getThemeColor} from '../../constants/themes';
 
 export const Container = styled.View`
-  background-color: ${defaultColors.secondary};
+  background-color: ${(props) => getThemeColor('secondary', props.theme)};
   flex: 2;
   padding: 20px 20px 0 30px;
 `;
@@ -12,11 +12,11 @@ export const ContainerTitle = styled.View`
   flex-direction: row;
 `;
 export const Title = styled.Text`
-  color: ${defaultColors.titles};
+  color: ${(props) => getThemeColor('titles', props.theme)};
   font-size: 24px;
   flex: 1;
 `;
-export const HighDefition = styled.Image`
+export const HighDefinition = styled.Image`
   width: 20px;
   align-self: flex-end;
 `;
@@ -30,7 +30,7 @@ export const ContainerAdditionalDetails = styled.View`
 `;
 
 export const Button = styled.TouchableOpacity`
-  background-color: ${defaultColors.buttons};
+  background-color: ${(props) => getThemeColor('buttons', props.theme)};
   width: 115px;
   height: 33px;
   border-radius: 15px;
@@ -38,13 +38,13 @@ export const Button = styled.TouchableOpacity`
   align-items: center;
 `;
 export const TextButton = styled.Text`
-  color: ${defaultColors.titles};
+  color: ${(props) => getThemeColor('textButton', props.theme)};
 `;
 export const ContainerDescription = styled.View``;
 export const Description = styled.Text`
   font-size: 13px;
   line-height: 24px;
-  color: ${defaultColors.text};
+  color: ${(props) => getThemeColor('text', props.theme)};
   opacity: 0.7;
 `;
 export const Credits = styled.View`
@@ -59,12 +59,12 @@ export const ContainerLastDetails = styled.View`
   margin: 5px 0 0 0;
 `;
 export const LastDetails = styled.Text`
-  color: ${defaultColors.text};
+  color: ${(props) => getThemeColor('text', props.theme)};
   font-size: 13px;
   flex: 1;
 `;
 export const LastDetailsText = styled.Text`
-  color: ${defaultColors.text};
+  color: ${(props) => getThemeColor('text', props.theme)};
   opacity: 0.7;
   font-size: 13px;
   flex: 4;

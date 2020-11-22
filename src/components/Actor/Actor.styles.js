@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {defaultColors} from '../../constants/themes';
+import {getThemeColor} from '../../constants/themes';
 
 export const Container = styled.View`
   /* background-color: red; */
@@ -12,7 +12,7 @@ export const Container = styled.View`
   padding-right: 10px; */
 `;
 export const ContainerImage = styled.View`
-  background-color: ${defaultColors.gray};
+  background-color: ${(props) => getThemeColor('gray', props.theme)};
   width: 50px;
   height: 50px;
   border-radius: 100px;
@@ -27,5 +27,5 @@ export const Image = styled.Image`
 
 export const Name = styled.Text`
   text-align: center;
-  color: ${defaultColors.titles};
+  color: ${(props) => getThemeColor('titles', props.theme)};
 `;

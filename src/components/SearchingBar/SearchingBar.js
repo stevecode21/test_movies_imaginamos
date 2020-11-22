@@ -1,9 +1,13 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+
+import {Container, Search, Icon} from './SearchingBar.styles';
+import {useSelector} from 'react-redux';
 export const SearchingBar = () => {
+  const {theme} = useSelector((state) => state.reduxThemes);
   return (
-    <View>
-      <Text>Searching bar</Text>
-    </View>
+    <Container theme={theme}>
+      <Icon source={require('../../assets/icons/search.png')} />
+      <Search theme={theme}>Search</Search>
+    </Container>
   );
 };

@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {defaultColors} from '../../constants/themes';
+import {defaultColors, getThemeColor} from '../../constants/themes';
 
 export const Container = styled.View`
   flex-direction: row;
@@ -12,10 +12,10 @@ export const Container = styled.View`
 
 export const Subtitle = styled.Text`
   /* font-size: 18px; */
-  color: ${defaultColors.titles};
+  color: ${(props) => getThemeColor('titles', props.theme)};
 `;
 
 export const More = styled.Text`
-  color: ${defaultColors.text};
+  color: ${(props) => getThemeColor('text', props.theme)};
   opacity: 0.7;
 `;

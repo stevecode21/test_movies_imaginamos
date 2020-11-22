@@ -1,7 +1,7 @@
 import React from 'react';
 import {Actor} from '../Actor/Actor';
 import {ActorsList} from './ListOfActors.styles.';
-import PropTypes from 'prop-types';
+
 import {useSelector} from 'react-redux';
 export const ListOfActors = () => {
   const {credits} = useSelector((state) => state.reduxMovies);
@@ -19,7 +19,3 @@ export const ListOfActors = () => {
     />
   );
 };
-
-// ListOfActors.propTypes = {
-//   actors: PropTypes.array.isRequired,
-// };

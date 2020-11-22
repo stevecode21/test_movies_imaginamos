@@ -1,5 +1,5 @@
 import styled from 'styled-components/native';
-import {defaultColors} from '../../constants/themes';
+import {getThemeColor} from '../../constants/themes';
 export const Container = styled.View`
   margin: 0 10px 10px 10px;
   /* background-color: red; */
@@ -8,7 +8,7 @@ export const Container = styled.View`
 export const ContainerImage = styled.View`
   width: 130px;
   height: 170px;
-  background-color: ${defaultColors.gray};
+  background-color: ${(props) => getThemeColor('gray', props.theme)};
   border-radius: 20px;
   overflow: hidden;
 `;
@@ -19,7 +19,7 @@ export const Image = styled.Image`
 `;
 
 export const Name = styled.Text`
-  color: ${defaultColors.titles};
+  color: ${(props) => getThemeColor('titles', props.theme)};
   margin: 10px 0 0 0;
 `;
 

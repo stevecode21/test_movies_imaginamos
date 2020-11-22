@@ -2,13 +2,15 @@ import React from 'react';
 import {Container, Image, Name, ContainerImage} from './Actor.styles';
 import PropTypes from 'prop-types';
 import {ROUTES} from '../../constants/api';
-
+import {useSelector} from 'react-redux';
 export const Actor = ({actor}) => {
+  const {theme} = useSelector((state) => state.reduxThemes);
+
   return (
     <Container>
-      <ContainerImage>
+      <ContainerImage theme={theme}>
         {!actor.profile_path ? (
-          <Name>?</Name>
+          <Name theme={theme}>?</Name>
         ) : (
           <Image
             source={{uri: `${ROUTES.IMAGES}${actor.profile_path}`}}
@@ -16,7 +18,9 @@ export const Actor = ({actor}) => {
           />
         )}
       </ContainerImage>
-      <Name numberOfLines={2}>{actor.name}</Name>
+      <Name numberOfLines={2} theme={theme}>
+        {actor.name}
+      </Name>
     </Container>
   );
 };

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 /**
  * Libraries
  */
@@ -17,7 +16,9 @@ import {Stars} from '../Stars/Stars';
  */
 import {ROUTES} from '../../constants/api';
 import {LoggedRoutes} from '../../navigation/routes/LoggedRoutes';
+import {useSelector} from 'react-redux';
 export const Movie = ({movie, navigation}) => {
+  const {theme} = useSelector((state) => state.reduxThemes);
   return (
     <Container>
       <Touch
@@ -26,14 +27,16 @@ export const Movie = ({movie, navigation}) => {
             movie: movie,
           });
         }}>
-        <ContainerImage>
+        <ContainerImage theme={theme}>
           <Image
             source={{uri: `${ROUTES.IMAGES}${movie.poster_path}`}}
             resizeMode="cover"
           />
         </ContainerImage>
       </Touch>
-      <Name numberOfLines={1}>{movie.original_title}</Name>
+      <Name theme={theme} numberOfLines={1}>
+        {movie.original_title}
+      </Name>
       <Stars voteAverage={movie.vote_average} />
     </Container>
   );

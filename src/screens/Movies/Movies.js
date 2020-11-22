@@ -11,15 +11,16 @@ import {MoviesView} from '../../components/MoviesView/MoviesView';
 /**
  * Redux
  */
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {getDiscoverMovies, getTopRatedMovies} from '../../store/actions/movies';
 /**
  * Styles
  */
 import {Container} from './Movies.styles';
-import {defaultColors} from '../../constants/themes';
+import {defaultColors, getThemeColor} from '../../constants/themes';
 export const Movies = () => {
   const dispatch = useDispatch();
+  const {theme} = useSelector((state) => state.reduxThemes);
 
   useEffect(() => {
     dispatch(getDiscoverMovies());
@@ -27,8 +28,11 @@ export const Movies = () => {
   });
   return (
     <>
-      <StatusBar backgroundColor={defaultColors.primary} />
-      <Container>
+      <StatusBar
+        backgroundColor={getThemeColor('primary', theme)}
+        barStyle={theme === 'default' ? 'light-content' : 'dark-content'}
+      />
+      <Container theme={theme}>
         <Greetings />
         <MoviesView />
       </Container>

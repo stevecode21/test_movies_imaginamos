@@ -12,7 +12,7 @@ import {
   ContainerLastDetails,
   LastDetails,
   TextButton,
-  HighDefition,
+  HighDefinition,
   LastDetailsText,
 } from './MovieDetails.styles';
 import PropTypes from 'prop-types';
@@ -21,28 +21,30 @@ import {Stars} from '../Stars/Stars';
 /**
  * Redux
  */
-import {useSelector, useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {getCredits} from '../../store/actions/movies';
+
 export const MovieDetails = ({movie}) => {
   const dispatch = useDispatch();
+  const {theme} = useSelector((state) => state.reduxThemes);
 
   useEffect(() => {
     dispatch(getCredits(movie.id));
   });
   return (
-    <Container>
+    <Container theme={theme}>
       <ContainerTitle>
-        <Title>{movie.original_title}</Title>
-        <HighDefition source={require('../../assets/icons/4k-fullhd.png')} />
+        <Title theme={theme}>{movie.original_title}</Title>
+        <HighDefinition source={require('../../assets/icons/4k-fullhd.png')} />
       </ContainerTitle>
       <ContainerAdditionalDetails>
-        <Button>
-          <TextButton>WATCH NOW</TextButton>
+        <Button theme={theme}>
+          <TextButton theme={theme}>WATCH NOW</TextButton>
         </Button>
         <Stars voteAverage={movie.vote_average} />
       </ContainerAdditionalDetails>
       <ContainerDescription>
-        <Description>{movie.overview}</Description>
+        <Description theme={theme}>{movie.overview}</Description>
       </ContainerDescription>
       <Credits>
         <ListOfActors />
@@ -50,14 +52,14 @@ export const MovieDetails = ({movie}) => {
 
       <AdditionalDetails>
         <ContainerLastDetails>
-          <LastDetails>Studio</LastDetails>
+          <LastDetails theme={theme}>Studio</LastDetails>
         </ContainerLastDetails>
         <ContainerLastDetails>
-          <LastDetails>Genre</LastDetails>
+          <LastDetails theme={theme}>Genre</LastDetails>
         </ContainerLastDetails>
         <ContainerLastDetails>
-          <LastDetails>Release</LastDetails>
-          <LastDetailsText>{movie.release_date}</LastDetailsText>
+          <LastDetails theme={theme}>Release</LastDetails>
+          <LastDetailsText theme={theme}>{movie.release_date}</LastDetailsText>
         </ContainerLastDetails>
       </AdditionalDetails>
     </Container>
