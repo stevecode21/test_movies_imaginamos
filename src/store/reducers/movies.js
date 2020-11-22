@@ -3,6 +3,7 @@ const initialState = {
   loading: false,
   movies: [],
   ratedMovies: [],
+  credits: [],
 };
 
 export const movies = (state = initialState, action) => {
@@ -23,6 +24,12 @@ export const movies = (state = initialState, action) => {
         ...state,
         loading: false,
         ratedMovies: action.payload.results,
+      };
+    case TYPES.GET_CREDITS_MOVIES:
+      return {
+        ...state,
+        loading: false,
+        credits: action.payload.cast,
       };
     default:
       return state;

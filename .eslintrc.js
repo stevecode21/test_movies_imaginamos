@@ -19,7 +19,7 @@ module.exports = {
     'no-undef': 2,
     semi: 2,
     'react/prop-types': 2,
-    'react/jsx-no-bind': 2,
+    'react/jsx-no-bind': 0,
     'react/jsx-no-duplicate-props': 2,
   },
   globals: {
