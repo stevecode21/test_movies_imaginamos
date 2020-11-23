@@ -26,8 +26,11 @@ export const Greetings = () => {
   const dispatch = useDispatch();
   const changeTheme = () => {
     let newTheme;
-    if (theme === 'default') newTheme = 'light';
-    else newTheme = 'default';
+    if (theme === 'default') {
+      newTheme = 'light';
+    } else {
+      newTheme = 'default';
+    }
     dispatch(setTheme(newTheme));
   };
   return (
