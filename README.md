@@ -15,6 +15,7 @@ Esta herramienta, junto a prettier asegura que el código se escriba con las mej
 - Te recomiendo usar yarn en lugar de npm, pero ya queda a tu elección.
 
 `yarn install` para realizar la instalación
+  
 `yarn android` para correr el proyecto en andorid
 
 # ¿Cómo eslintarlo manualmente?
