@@ -27,5 +27,5 @@ Esta herramienta, junto a prettier asegura que el código se escriba con las mej
 Pues aquí lo tienes:
 
 
-![DarkTheme](./.readme-static/darkTheme.jpg)
-![LightTheme](./.readme-static/lightTheme.jpg)
+![DarkTheme](./.readme-static/darkTheme.jpg) ![LightTheme](./.readme-static/lightTheme.jpg)
+
