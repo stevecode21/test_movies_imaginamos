@@ -21,6 +21,7 @@ Esta herramienta, junto a prettier asegura que el código se escriba con las mej
 # ¿Cómo eslintarlo manualmente?
 
 `yarn lint` para revisar el código
+  
 `yarn lint:fix` para realizar las correcciones necesarias de forma automática
 
 # ¿Te gustaría ver un Preview de lo que verás?
